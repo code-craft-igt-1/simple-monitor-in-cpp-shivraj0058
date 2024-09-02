@@ -23,5 +23,5 @@ TEST(Monitor, PulseRateOutOfRange) {
 }
 
 TEST(Monitor, SPO2OutOfRange) {
-  ASSERT_FALSE(vitalsOk(99, 99, 99));
+  ASSERT_FALSE(vitalsOk(99, 99, 89));
 }
