@@ -7,7 +7,7 @@
 using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
 
 bool ParameterIsInRange(float inputValue, float lowerLimit, float upperLimit) {
-  if (inputValue<lowerLimit||inputValue>upperLimit) {
+  if (inputValue<lowerLimit || inputValue>upperLimit) {
     return false;
   }
   return true;
@@ -24,7 +24,7 @@ void PrintMessage(const std::string& message) {
 }
 
 bool CheckBodyTemperature(float bodyTemperature) {
-  if (!ParameterIsInRange(bodyTemperature,TEMPERATURE_LOWER_LIMIT,TEMPERATURE_UPPER_LIMIT)) {
+  if (!ParameterIsInRange(bodyTemperature, TEMPERATURE_LOWER_LIMIT, TEMPERATURE_UPPER_LIMIT)) {
     PrintMessage("Temperature is critical!");
     return false;
   }
@@ -32,7 +32,7 @@ bool CheckBodyTemperature(float bodyTemperature) {
 }
 
 bool CheckPulseRate(float pulseRate) {
-  if (!ParameterIsInRange(pulseRate,PULSERATE_LOWER_LIMIT,PULSERATE_UPPER_LIMIT)) {
+  if (!ParameterIsInRange(pulseRate, PULSERATE_LOWER_LIMIT, PULSERATE_UPPER_LIMIT)) {
     PrintMessage("Pulse Rate is out of range!");
     return false;
   }
@@ -40,7 +40,7 @@ bool CheckPulseRate(float pulseRate) {
 }
 
 bool CheckSPO2(float spo2) {
-  if (!ParameterIsInRange(spo2,SPO2_LOWER_LIMIT,SPO2_UPPER_LIMIT)) {
+  if (!ParameterIsInRange(spo2, SPO2_LOWER_LIMIT, SPO2_UPPER_LIMIT)) {
     PrintMessage("Oxygen Saturation out of range!");
     return false;
   }
