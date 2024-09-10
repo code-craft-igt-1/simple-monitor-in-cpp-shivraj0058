@@ -4,7 +4,8 @@
 #include <chrono>
 #include <iostream>
 #include <string>
-using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds, std::string;
+using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
+using std::string;
 
 bool ParameterIsInRange(float inputValue, float lowerLimit, float upperLimit) {
   if (inputValue<lowerLimit || inputValue>upperLimit) {
@@ -17,11 +18,12 @@ void PrintWarning(const std::string& message) {
   cout <<"Warning:"<< message << endl;
 }
 
-void CheckForTolerance(string parameter, float inputValue, float lowerLimit, float upperLimit, float tolerance) {
-  if(inputValue<(lowerLimit+tolerance)) {
+void CheckForTolerance(string parameter, float inputValue, float lowerLimit, 
+                       float upperLimit, float tolerance) {
+  if (inputValue < (lowerLimit+tolerance)) {
     PrintWarning(warningMessages.at(parameter).first);
-  }
-  else if(inputValue>(upperLimit-tolerance)) {
+  }else 
+  if (inputValue > (upperLimit-tolerance)) {
     PrintWarning(warningMessages.at(parameter).second);
   }
 }
@@ -41,7 +43,8 @@ bool CheckBodyTemperature(float bodyTemperature) {
     PrintMessage("Temperature is critical!");
     return false;
   }
-  CheckForTolerance("Temperature", bodyTemperature, TEMPERATURE_LOWER_LIMIT, TEMPERATURE_UPPER_LIMIT, TEMPERATURE_TOLERANCE);
+  CheckForTolerance("Temperature", bodyTemperature, TEMPERATURE_LOWER_LIMIT, 
+                    TEMPERATURE_UPPER_LIMIT, TEMPERATURE_TOLERANCE);
   return true;
 }
 
@@ -50,7 +53,8 @@ bool CheckPulseRate(float pulseRate) {
     PrintMessage("Pulse Rate is out of range!");
     return false;
   }
-  CheckForTolerance("PulseRate", pulseRate, PULSERATE_LOWER_LIMIT, PULSERATE_UPPER_LIMIT, PULSERATE_TOLERANCE);
+  CheckForTolerance("PulseRate", pulseRate, PULSERATE_LOWER_LIMIT, 
+                    PULSERATE_UPPER_LIMIT, PULSERATE_TOLERANCE);
   return true;
 }
 
