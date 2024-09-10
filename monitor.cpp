@@ -8,9 +8,9 @@ using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono
 using std::string;
 
 warningMessages = {
-   {"Temperature", {"Approaching hypothermia", "Approaching hyperthermia"}},
-   {"PulseRate", {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
-   {"SPO2", {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}};
+  {"Temperature", {"Approaching hypothermia", "Approaching hyperthermia"}},
+  {"PulseRate", {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
+  {"SPO2", {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}};
 
 bool ParameterIsInRange(float inputValue, float lowerLimit, float upperLimit) {
   if (inputValue<lowerLimit || inputValue>upperLimit) {
