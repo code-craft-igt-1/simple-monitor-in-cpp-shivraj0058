@@ -5,12 +5,25 @@
 #include <iostream>
 #include <string>
 using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
-using std::string;
 
-std::map<std::string, std::pair<std::string, std::string>> warningMessages = {
-  {"Temperature", {"Approaching hypothermia", "Approaching hyperthermia"}},
-  {"PulseRate", {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
-  {"SPO2", {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}};
+std::map<std::string, std::map<std::string, std::pair<std::string, std::string>>> 
+        warningMessages = {{"English",
+        {{"Temperature",
+         {"Approaching hypothermia", "Approaching hyperthermia"}},
+         {"PulseRate",
+         {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
+         {"SPO2",
+         {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}
+        }},
+        {"German", 
+        {{"Temperature",
+        {"Annäherung an Unterkühlung", "Annäherung an Überhitzung"}},
+         {"PulseRate",
+         {"Pulsfrequenz nähert sich dem unteren Grenzwert", "Pulsfrequenz nähert sich dem oberen Grenzwert"}},
+         {"SPO2",
+         {"SPO2 nähert sich dem unteren Grenzwert", "SPO2 nähert sich dem oberen Grenzwert"}}
+        }},
+};
 
 bool ParameterIsInRange(float inputValue, float lowerLimit, float upperLimit) {
   if (inputValue<lowerLimit || inputValue>upperLimit) {
@@ -23,12 +36,12 @@ void PrintWarning(const std::string& message) {
   cout <<"Warning:"<< message << endl;
 }
 
-void CheckForTolerance(string parameter, float inputValue, float lowerLimit,
+void CheckForTolerance(std::string parameter, float inputValue, float lowerLimit,
                        float upperLimit, float tolerance) {
   if (inputValue < (lowerLimit+tolerance)) {
-    PrintWarning(warningMessages.at(parameter).first);
+    PrintWarning(warningMessages.at(language).at(parameter).first);
   } else if (inputValue > (upperLimit-tolerance)) {
-    PrintWarning(warningMessages.at(parameter).second);
+    PrintWarning(warningMessages.at(language).at(parameter).second);
   }
 }
 
