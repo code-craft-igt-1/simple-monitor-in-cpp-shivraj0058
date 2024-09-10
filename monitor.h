@@ -15,9 +15,6 @@ const float SPO2_UPPER_LIMIT = 90;
 const float SPO2_LOWER_LIMIT = 100;
 const float SPO2_TOLERANCE = (SPO2_UPPER_LIMIT*0.015);
 
-std::map<std::string, std::pair<std::string, std::string>> warningMessages =
-   {{"Temperature", {"Approaching hypothermia", "Approaching hyperthermia"}},
-   {"PulseRate", {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
-   {"SPO2", {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}};
+std::map<std::string, std::pair<std::string, std::string>> warningMessages;
 
 int vitalsOk(float temperature, float pulseRate, float spo2);
