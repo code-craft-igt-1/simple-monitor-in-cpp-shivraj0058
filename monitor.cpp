@@ -6,7 +6,7 @@
 #include <string>
 using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
 
-std::map<std::string, std::map<std::string, std::pair<std::string, std::string>>> 
+std::map<std::string, std::map<std::string, std::pair<std::string, std::string>>>
         warningMessages = {{"English",
         {{"Temperature",
          {"Approaching hypothermia", "Approaching hyperthermia"}},
@@ -15,11 +15,12 @@ std::map<std::string, std::map<std::string, std::pair<std::string, std::string>>
          {"SPO2",
          {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}
         }},
-        {"German", 
+        {"German",
         {{"Temperature",
         {"Annäherung an Unterkühlung", "Annäherung an Überhitzung"}},
          {"PulseRate",
-         {"Pulsfrequenz nähert sich dem unteren Grenzwert", "Pulsfrequenz nähert sich dem oberen Grenzwert"}},
+         {"Pulsfrequenz nähert sich dem unteren Grenzwert", 
+                            "Pulsfrequenz nähert sich dem oberen Grenzwert"}},
          {"SPO2",
          {"SPO2 nähert sich dem unteren Grenzwert", "SPO2 nähert sich dem oberen Grenzwert"}}
         }},
