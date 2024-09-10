@@ -19,7 +19,7 @@ std::map<std::string, std::map<std::string, std::pair<std::string, std::string>>
         {{"Temperature",
         {"Annäherung an Unterkühlung", "Annäherung an Überhitzung"}},
          {"PulseRate",
-         {"Pulsfrequenz nähert sich dem unteren Grenzwert", 
+         {"Pulsfrequenz nähert sich dem unteren Grenzwert",
                             "Pulsfrequenz nähert sich dem oberen Grenzwert"}},
          {"SPO2",
          {"SPO2 nähert sich dem unteren Grenzwert", "SPO2 nähert sich dem oberen Grenzwert"}}
