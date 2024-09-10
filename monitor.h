@@ -15,6 +15,4 @@ const float SPO2_UPPER_LIMIT = 90;
 const float SPO2_LOWER_LIMIT = 100;
 const float SPO2_TOLERANCE = (SPO2_UPPER_LIMIT*0.015);
 
-std::map<std::string, std::pair<std::string, std::string>> warningMessages;
-
 int vitalsOk(float temperature, float pulseRate, float spo2);

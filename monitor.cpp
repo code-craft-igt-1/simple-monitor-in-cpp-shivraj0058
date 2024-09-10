@@ -7,7 +7,7 @@
 using std::cout, std::endl, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
 using std::string;
 
-warningMessages = {
+std::map<std::string, std::pair<std::string, std::string>> warningMessages = {
   {"Temperature", {"Approaching hypothermia", "Approaching hyperthermia"}},
   {"PulseRate", {"Pulse rate approaching lower limit", "Pulse rate is approaching higher limit"}},
   {"SPO2", {"SPO2 is approaching lower limit", "SPO2 is approaching upper limit"}}};
